@@ -41,6 +41,10 @@
       inherit system;
       gcc.arch = "sapphirerapids";
     };
+    zen3 = {
+      inherit system;
+      gcc.arch = "znver3";
+    };
     zen4 = {
       inherit system;
       gcc.arch = "znver4";

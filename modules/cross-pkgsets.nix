@@ -69,6 +69,10 @@ in {
         crossSystem = systems.riscv64.generic;
         profile = "perfStatic";
       };
+      perfPkgsZen3 = buildPkgSet {
+        crossSystem = systems.x86_64.zen3;
+        profile = "perf";
+      };
       perfPkgsZen4 = buildPkgSet {
         crossSystem = systems.x86_64.zen4;
         profile = "perf";
