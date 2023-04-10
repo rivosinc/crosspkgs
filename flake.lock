@@ -67,11 +67,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1681104732,
-        "narHash": "sha256-JzsI3G7wUkk/WtyEGcQ1FxqYh4QoMb20LiTUoh5W0uM=",
+        "lastModified": 1681118863,
+        "narHash": "sha256-vAwqzjXlcIY/D8rhjkfRQSJK6OWC9bgBrErUkeEyzNg=",
         "owner": "rivosinc",
         "repo": "glibc",
-        "rev": "a50689b73c059f2713f7ef1400a59baa5819a604",
+        "rev": "bf404571162ede04e8a79525ceaa25bf254f8ccd",
         "type": "github"
       },
       "original": {
@@ -135,11 +135,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1680910012,
-        "narHash": "sha256-h8XSy1tRrbBLzHLJhaOYnXr1soxj1eIMZbVeSvphHSs=",
+        "lastModified": 1681118924,
+        "narHash": "sha256-pABVuB9X98jWTlTtTr8ZzisayhaXhHh3h3b17od82FQ=",
         "owner": "rivosinc",
         "repo": "nixpkgs",
-        "rev": "345b1205d27cd6461d26ceccfd21387ce8c6191f",
+        "rev": "5e6e6eaa38cb83302f583960844a304fab7e90eb",
         "type": "github"
       },
       "original": {
