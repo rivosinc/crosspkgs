@@ -12,7 +12,8 @@
     lib,
     ...
   }: let
-    inherit (inputs) nixpkgs crosspkgs;
+    inherit (inputs) nixpkgs;
+    crosspkgs = inputs.crosspkgs or inputs.self;
     inherit (crosspkgs.inputs) binutils-gdb gcc glibc llvm;
   in {
     _module.args.pkgs = lib.mkDefault (import nixpkgs {
