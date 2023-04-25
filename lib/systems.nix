@@ -2,7 +2,7 @@
 # Licensed under the MIT License; see LICENSE for details.
 # SPDX-License-Identifier: MIT
 # Systems we're interested in building for.
-{
+{lib}: {
   aarch64 = {
     generic = {
       system = "aarch64-linux";
@@ -11,10 +11,23 @@
 
   riscv64 = let
     system = "riscv64-linux";
+    rvext = import ./riscv-extensions.nix {inherit lib;};
   in {
     generic = {
       inherit system;
       gcc.arch = "rv64gc";
+    };
+    rva20 = {
+      inherit system;
+      gcc.arch = rvext.RVA20U64.marchString;
+    };
+    rva22 = {
+      inherit system;
+      gcc.arch = rvext.RVA22U64.marchString;
+    };
+    rva22Full = {
+      inherit system;
+      gcc.arch = rvext.RVA22U64Full.marchString;
     };
   };
 

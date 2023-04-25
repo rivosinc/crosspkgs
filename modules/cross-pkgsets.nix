@@ -9,7 +9,7 @@
   system,
   ...
 }: let
-  systems = import ../lib/systems.nix;
+  systems = import ../lib/systems.nix {inherit lib;};
 
   profiles = pkgs: let
     inherit (pkgs) rivosAdapters stdenvAdapters;
@@ -59,6 +59,10 @@ in {
     legacyPackages = {
       pkgsRiscv64 = buildPkgSet {
         crossSystem = systems.riscv64.generic;
+        profile = "default";
+      };
+      pkgsRVA22Full = buildPkgSet {
+        crossSystem = systems.riscv64.rva22Full;
         profile = "default";
       };
       perfPkgsRiscv64 = buildPkgSet {
