@@ -73,6 +73,10 @@ in {
         crossSystem = systems.riscv64.generic;
         profile = "perf";
       };
+      perfPkgsRVA22 = buildPkgSet {
+        crossSystem = systems.riscv64.rva22;
+        profile = "perf";
+      };
       perfPkgsRiscv64Static = buildPkgSet {
         crossSystem = systems.riscv64.generic;
         profile = "perfStatic";
