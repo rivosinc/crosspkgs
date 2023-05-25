@@ -30,6 +30,7 @@
       ];
       flake = {
         flakeModules.default = ./modules/stdenv-modules.nix;
+        overlays.rivosAdapters = (import ./overlays/adapters.nix);
       };
       systems = [
         "aarch64-darwin"
