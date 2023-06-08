@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 by Rivos Inc.
+# Licensed under the MIT License; see LICENSE for details.
+# SPDX-License-Identifier: MIT
+
 # adapters should be after any glibc overrides to ensure that makeStatic
 # picks up the right package.
 final: prev: rec {

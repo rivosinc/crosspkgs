@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2023 by Rivos Inc.
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # crosspkgs
 
 Cross-compile your nix flake with your own toolchain.
