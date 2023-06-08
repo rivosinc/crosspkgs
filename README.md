@@ -6,6 +6,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # crosspkgs
 
+[![REUSE status](https://api.reuse.software/badge/github.com/rivosinc/crosspkgs)](https://api.reuse.software/info/github.com/rivosinc/crosspkgs)
+
 Cross-compile your nix flake with your own toolchain.
 
 ## How to use
