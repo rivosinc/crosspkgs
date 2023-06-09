@@ -5,3 +5,7 @@ Source: https://github.com/rivosinc/crosspkgs/
 Files: flake.lock
 Copyright: Copyright (c) 2023 by Rivos Inc.
 License: CC0-1.0
+
+Files: .gitignore
+Copyright: Copyright (c) 2023 by Rivos Inc.
+License: CC0-1.0
