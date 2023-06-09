@@ -19,6 +19,7 @@
         name = "reuse";
         description = "Check REUSE compliance";
         entry = "${pkgs.reuse}/bin/reuse lint";
+        pass_filenames = false;
       };
     };
   };
