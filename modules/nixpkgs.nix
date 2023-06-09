@@ -1,12 +1,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2023 by Rivos Inc.
 # Licensed under the MIT License, see LICENSE for details.
 # SPDX-License-Identifier: MIT
-{
-  system,
-  lib,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   perSystem = {
     system,
     lib,

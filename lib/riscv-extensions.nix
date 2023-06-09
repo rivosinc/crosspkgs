@@ -2,8 +2,7 @@
 # Licensed under the MIT License; see LICENSE for details.
 # SPDX-License-Identifier: MIT
 # Support code for dealing with RISC-V extensions.
-{lib}: let
-in {
+{lib}: {
   RVA20U64 = {
     isaString = "rv64gc";
     marchString = "rv64gc";

@@ -6,13 +6,12 @@
   inputs,
   config,
   lib,
-  system,
   ...
 }: let
   systems = import ../lib/systems.nix {inherit lib;};
 
   profiles = pkgs: let
-    inherit (pkgs) rivosAdapters stdenvAdapters;
+    inherit (pkgs) rivosAdapters;
   in rec {
     default = [];
     perf = [
@@ -26,8 +25,8 @@
     ];
   };
   # Apply the adapters for a given profile.
-  applyAdapterOverlay = profile: final: prev: let
-    inherit (prev) rivosAdapters stdenvAdapters;
+  applyAdapterOverlay = profile: _final: prev: let
+    inherit (prev) rivosAdapters;
   in {
     stdenv = rivosAdapters.modifyStdenv prev.stdenv ((profiles prev).${profile});
   };
@@ -52,7 +51,7 @@ in {
         ];
         crossOverlays = [
           (applyAdapterOverlay profile)
-          (config.flake.overlays.default or (final: prev: {}))
+          (config.flake.overlays.default or (_final: _prev: {}))
         ];
       };
   in {

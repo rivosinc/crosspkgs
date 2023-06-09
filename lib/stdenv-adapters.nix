@@ -9,7 +9,7 @@
 }: let
   # It would be nice not to go behind nixpkgs's back to get this, but stdenvAdapters isn't overridable.
   defaultMkDerivationFromStdenv = import (pkgs.path + "/pkgs/stdenv/generic/make-derivation.nix") {inherit lib config;};
-  inherit (pkgs.stdenvAdapters) makeStaticBinaries makeStaticLibraries makeStaticDarwin overrideInStdenv propagateBuildInputs;
+  inherit (pkgs.stdenvAdapters) makeStaticBinaries makeStaticLibraries makeStaticDarwin propagateBuildInputs;
   # Low level function to help with overriding `mkDerivationFromStdenv`. One
   # gives it the old stdenv arguments and a "continuation" function, and
   # underneath the final stdenv argument it yields to the continuation to do
@@ -58,7 +58,7 @@ in rec {
   # Undo the effects of makeStatic.
   makeDynamic = stdenv0:
     stdenv0.override (old: {
-      mkDerivationFromStdenv = withOldMkDerivation old (stdenv: mkDerivationSuper: args:
+      mkDerivationFromStdenv = withOldMkDerivation old (_stdenv: mkDerivationSuper: args:
         (mkDerivationSuper args).overrideAttrs (oldAttrs: {
           NIX_CFLAGS_LINK = lib.concatStringsSep " " (lib.remove "-static" (lib.splitString " " (oldAttrs.NIX_CFLAGS_LINK or "")));
           configureFlags = lib.subtractLists ["--disable-shared" "--enable-static"] oldAttrs.configureFlags or [];
@@ -80,7 +80,7 @@ in rec {
   # Disables all hardening flags.
   disableHardening = stdenv:
     stdenv.override (old: {
-      mkDerivationFromStdenv = extendMkDerivationArgs old (args: {
+      mkDerivationFromStdenv = extendMkDerivationArgs old (_args: {
         hardeningDisable = ["all"];
       });
     });

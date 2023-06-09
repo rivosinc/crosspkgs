@@ -9,14 +9,10 @@
     ./cross-pkgsets.nix
     ./dev-systems.nix
     ./nixpkgs.nix
+    ./pre-commit.nix
   ];
 
-  perSystem = {
-    config,
-    system,
-    pkgs,
-    ...
-  }: {
+  perSystem = {...}: {
     imports = [
       ./formatter.nix
     ];

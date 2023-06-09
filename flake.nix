@@ -21,6 +21,8 @@
 
     glibc.url = "github:rivosinc/glibc/rivos/release/2.37/master";
     glibc.inputs.nixpkgs.follows = "nixpkgs";
+
+    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -30,7 +32,7 @@
       ];
       flake = {
         flakeModules.default = ./modules/stdenv-modules.nix;
-        overlays.rivosAdapters = (import ./overlays/adapters.nix);
+        overlays.rivosAdapters = import ./overlays/adapters.nix;
       };
       systems = [
         "aarch64-darwin"
